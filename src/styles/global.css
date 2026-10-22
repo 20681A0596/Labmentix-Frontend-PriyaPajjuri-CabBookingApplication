@@ -1,0 +1,332 @@
+:root{
+    --bg:#0a0a0f;
+    --surface:#13131a;
+    --card:#1a1a24;
+    --accent:#f5c842;
+    --accent2:#ff6b35;
+    --text:#f0f0f0;
+    --muted:#6b6b80;
+    --border:rgba(255,255,255,0.07);
+}
+
+/* BASE */
+
+body{
+    margin:0;
+    font-family:'DM Sans',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* booking layout */
+
+.booking-layout{
+    display:grid;
+    grid-template-columns:400px 1fr;
+    height:calc(100vh - 60px);
+}
+
+/* LEFT PANEL */
+
+.booking-panel{
+    background:var(--surface);
+    padding:25px;
+    border-right:1px solid var(--border);
+    overflow-y:auto;
+}
+
+.panel-title{
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.panel-title span{
+    color:var(--accent);
+}
+
+/* inputs */
+
+.input-box{
+    width:100%;
+    padding:12px;
+    margin-bottom:10px;
+    border-radius:10px;
+    border:1px solid var(--border);
+    background:var(--card);
+    color:var(--text);
+    outline:none;
+}
+
+.input-box:focus{
+    border:1px solid var(--accent);
+}
+
+/* cab cards */
+
+.cab-types{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.car-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:10px;
+}
+
+/* CAR CARD */
+
+.car-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    background:#1e1e1e;
+    padding:12px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.25s;
+}
+
+.car-card img{
+    width:55px;
+}
+
+.car-card:hover{
+    background:#2c2c2c;
+    transform:scale(1.02);
+}
+
+.car-card.active{
+    border:2px solid #00c853;
+    background:#2c2c2c;
+}
+
+/* CONFIRM BUTTON */
+
+.confirm-btn{
+    margin-top:15px;
+    width:100%;
+    background:#00c853;
+    color:white;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.confirm-btn:hover{
+    background:#00a843;
+}
+
+/* CAB CARD */
+
+.cab-card{
+    background:var(--card);
+    padding:15px;
+    border-radius:12px;
+    cursor:pointer;
+    border:1px solid var(--border);
+    transition:0.2s;
+}
+
+.cab-card:hover{
+    transform:translateY(-2px);
+    border:1px solid var(--accent);
+}
+
+.cab-card.selected{
+    border:1px solid var(--accent);
+}
+
+/* BOOK BUTTON */
+
+.book-btn{
+    width:100%;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    border:none;
+    padding:14px;
+    border-radius:12px;
+    font-weight:600;
+    cursor:pointer;
+    color:black;
+    transition:0.25s;
+}
+
+.book-btn:hover{
+    transform:scale(1.02);
+}
+
+/* FARE DISPLAY */
+
+.fare-box{
+    margin-top:15px;
+    background:var(--card);
+    padding:12px;
+    border-radius:10px;
+}
+
+/* DRIVER CARD */
+
+.driver-card{
+    background:var(--card);
+    padding:20px;
+    border-radius:12px;
+    margin-top:20px;
+    width:300px;
+}
+
+/* payment modal */
+
+.payment-overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+.payment-modal{
+    background:#0f172a;
+    padding:30px;
+    border-radius:12px;
+    text-align:center;
+    color:white;
+    width:320px;
+}
+
+.amount{
+    margin-top:15px;
+    font-size:18px;
+}
+
+.timer{
+    margin-top:10px;
+    opacity:0.8;
+}
+
+.pay-btn{
+    margin-top:15px;
+    padding:10px 20px;
+    background:#f7b500;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.cancel-btn{
+    margin-left:10px;
+    padding:10px 20px;
+    background:#333;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+/* MAP PANEL */
+
+.map-container{
+    height:100%;
+    width:100%;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .booking-layout{
+        grid-template-columns:1fr;
+    }
+
+    .booking-panel{
+        height:auto;
+    }
+
+}
+
+/* PAYMENT PAGE */
+
+.payment-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:calc(100vh - 60px);
+}
+
+.payment-card{
+    background:#13131a;
+    padding:35px;
+    border-radius:16px;
+    width:320px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+.payment-methods{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+    margin-bottom:20px;
+}
+
+.method{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    background:#1f2937;
+    color:white;
+    cursor:pointer;
+}
+
+.method.active{
+    background:#00c853;
+    color:white;
+}
+
+.qr-section{
+    margin-top:10px;
+}
+
+.qr-box{
+    background:white;
+    padding:10px;
+    border-radius:12px;
+    display:inline-block;
+    margin-bottom:10px;
+}
+
+.qr-box img{
+    width:180px;
+    height:180px;
+}
+
+.timer{
+    margin-top:10px;
+    color:#facc15;
+}
+
+.cash-section{
+    margin-top:15px;
+    font-size:16px;
+    color:#ddd;
+}
+
+.driver-card{
+    background:#1f2937;
+    padding:20px;
+    border-radius:10px;
+    width:300px;
+    margin-top:20px;
+}

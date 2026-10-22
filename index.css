@@ -1,0 +1,64 @@
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#0a0a0f;
+  color:white;
+}
+
+.booking-layout{
+  display:grid;
+  grid-template-columns:400px 1fr;
+  height:calc(100vh - 60px);
+}
+
+.booking-panel{
+  background:#13131a;
+  padding:25px;
+  border-right:1px solid rgba(255,255,255,0.07);
+}
+
+.panel-title{
+  font-size:24px;
+  font-weight:700;
+}
+
+.panel-title span{
+  color:#f5c842;
+}
+
+.input-box{
+  width:100%;
+  padding:12px;
+  margin-bottom:10px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:#1a1a24;
+  color:white;
+}
+
+.cab-card{
+  background:#1a1a24;
+  padding:14px;
+  border-radius:10px;
+  margin-bottom:10px;
+  cursor:pointer;
+  border:1px solid rgba(255,255,255,0.07);
+}
+
+.cab-card:hover{
+  border:1px solid #f5c842;
+}
+
+.cab-card.selected{
+  border:1px solid #f5c842;
+}
+
+.book-btn{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(135deg,#f5c842,#ff6b35);
+  font-weight:700;
+  cursor:pointer;
+}
